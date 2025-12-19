@@ -1,5 +1,5 @@
 # Grafo-degli-Attori
----
+
 Descrizione delle specifiche richieste dal testo del progetto completo:
 1. il dettaglio di come avviene il parsing delle righe del file di testo name.basics.tsv nel programma Java
 2. il dettaglio dell'implementazione della coda FIFO nell'algoritmo BFS, e quali informazioni vengono memorizzate in ogni elemento della coda
@@ -8,7 +8,7 @@ Descrizione delle specifiche richieste dal testo del progetto completo:
 5. per il progetto completo: in quale modo vengono memorizzate e gestite le partecipazioni degli attori all'interno del programma Java
 
 ## CreaGrafo.java
----
+
 1) Parsing delle righe del file name.basics.tsv: all'interno del metodo main della classe CreaGrafo.java chiamato il metodo LeggiDaFileNomi che prende per argomento argv[0] ovvero il file name.basics.tsv e una mappa chiave valore, inizialmente vuota, dove la chiave è un Integer e il valore è un'istanza della classe Attore.
 LeggiDaFileNomi leggere singolarmente ogni riga del file name.basics.tsv. Per ogni riga del file estrae i singoli campi e li inserisce in un array in modo da essere più facilmente gestibili. Vengono verificati i vincoli che erano stati richiesti dal progetto.
 Se superano tutti i controlli allora viene creata una nuova istanza di attore associata al codice univoco trovato come primo argomento del file ed inserita nella mappa.
@@ -19,7 +19,7 @@ Grazie al metodo ScriviInPartecipazioni viene creata una lista dei codici degli 
 Successivamente scrive nel file il codice identificativo dell'attore il numero dei film cui ha preso parte e tutti i codici di tali film.
 
 cammini.c
----
+
 2) Implementazione della coda FIFO: la coda FIFO viene implementata all'interno di threadMinPathBody, che implementa la BFS, come un array di puntatori ad attori. All'interno di functionality.h è presente una struct per l'implementazione della FIFO che memorizza per ogni elemento della coda: codiceTesta e codiceCoda che sono due interi per l'estrazione e l'inserimento all'interno della coda, capacity che rappresenta la capacità dell'array ed infine coda che è l'array di puntatori ad attori.
 
 3) Ricostruzione dei nodi intermedi de cammino minimo: la ricostruzione dei nodi intermedi del cammino minimo vengono ricostruiti grazie al fatto che ogni nodo (struttura nodoABR) dell'ABR presenta il puntatore al nodo predecessore, cioè ogni volta che vengono scoperti nodi adiacenti viene settato il predecessore. In questo modo non appena viene trovata la destinazione viene chiamata la funzione stampaCamminoMinimo cui prende, tra tutti i parametri, anche il puntatore alla destinazione. In tal modo viene creato un array di attori, partendo dalla destinazione si risale fino al nodo sorgente (ovviamente passo passo si carica il puntatore alla struttura attore di ogni nodo nell'array). A questo punto viene fatto scorrere l'array in senso inverso in modo tale da poter stampare all'interno del file il cammino minimo nel verso corretto
