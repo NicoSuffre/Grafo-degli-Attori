@@ -18,7 +18,7 @@ Questo processo è gestito da un while che legge le linee fino a che non arriva 
 Grazie al metodo ScriviInPartecipazioni viene creata una lista dei codici degli attori presenti nella mappa. Grazie ad un for, per ogni codice identificatore degli attori creo la lista dei codici identificativi dei film ,cui l'attore preso in considerazione, a cui ha preso parte. Questo è possibile farlo perché nella classe Attore è presente un Set per i codici univoci degli attori che hanno lavorato con l'attore preso un considerazione e un Set per l'insieme dei codici dei film cui l'attore in questione ha lavorato.
 Successivamente scrive nel file il codice identificativo dell'attore il numero dei film cui ha preso parte e tutti i codici di tali film.
 
-cammini.c
+## cammini.c
 
 2) Implementazione della coda FIFO: la coda FIFO viene implementata all'interno di threadMinPathBody, che implementa la BFS, come un array di puntatori ad attori. All'interno di functionality.h è presente una struct per l'implementazione della FIFO che memorizza per ogni elemento della coda: codiceTesta e codiceCoda che sono due interi per l'estrazione e l'inserimento all'interno della coda, capacity che rappresenta la capacità dell'array ed infine coda che è l'array di puntatori ad attori.
 
