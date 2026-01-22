@@ -235,7 +235,7 @@ public class CreaGrafo {
             // e le restituisce in un Set. Questo viene convertito in una Lista
             // (tramite new ArrayList<>) questo perché così posso ordinare
             // i nodi in ordine crescente
-            List<Integer> listaNodi = new ArrayList<>(attori.keySet());     //<------- riguarda che un serve ad un cazzo
+            List<Integer> listaNodi = new ArrayList<>(attori.keySet());
 
             // Ordino in modo crescente i nodi
             Collections.sort(listaNodi);
